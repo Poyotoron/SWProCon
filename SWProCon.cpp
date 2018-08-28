@@ -66,6 +66,17 @@ bool ProController::connectedCheck() {
 	return connectedFlag;
 }
 
+void ProController::read() {
+	vector<char> data;
+	char c;
+}
+
+void ProController::readLoop() {
+	while (loopFlag) {
+		read();
+	}
+}
+
 ProController::~ProController() {
 	loopFlag = false;
 	readThread.join();

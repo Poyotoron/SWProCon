@@ -18,8 +18,10 @@ namespace SWPC{
 		ProController(const char*, int timeout = 0);
 		void init(const char*, int);
 		bool connectedCheck();
+		void read();
 		virtual ~ProController();
 	private:
+		void readLoop();
 		std::fstream JoyStick;
 		std::thread readThread;
 		bool connectedFlag;
