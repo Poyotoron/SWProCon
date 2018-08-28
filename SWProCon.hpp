@@ -6,7 +6,7 @@
 
 namespace SWPC{
 	// ボタン(全部で18)
-	enum ButtonsNum {B, A, Y, X, L, R, ZL, ZR, MINUS, PLUS, LEFT_STICK, RIGHT_STICK, HOME, SC, UP, RIGHT, DOWN, LEFT}
+	enum ButtonsNum {B, A, Y, X, L, R, ZL, ZR, MINUS, PLUS, LEFT_STICK, RIGHT_STICK, HOME, SC, UP, RIGHT, DOWN, LEFT};
 	const int NumButtons = 18;
 	// スティック(左XYと右XY)
 	enum SticksNum {LEFT_X, LEFT_Y, RIGHT_X, RIGHT_Y};
@@ -14,7 +14,7 @@ namespace SWPC{
 	class ProController {
 	public:
 		ProController();
-		ProController(int timeout = 0);
+		ProController(int);
 		ProController(const char*, int timeout = 0);
 		void init(const char*, int);
 		bool connectedCheck();
@@ -29,5 +29,5 @@ namespace SWPC{
 		bool buttonData[NumButtons];
 		int readStickData[NumSticks];
 		int stickData[NumSticks];
-	}
+	};
 }

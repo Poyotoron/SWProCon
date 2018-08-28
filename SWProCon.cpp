@@ -65,3 +65,9 @@ void ProController::init(const char* fileName, int timeout) {
 bool ProController::connectedCheck() {
 	return connectedFlag;
 }
+
+ProController::~ProController() {
+	loopFlag = false;
+	readThread.join();
+	JoyStick.close();
+}
