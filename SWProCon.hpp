@@ -5,8 +5,10 @@
 #include <thread>
 
 namespace SWPC{
+	// ボタン(全部で18)
 	enum ButtonsNum {B, A, Y, X, L, R, ZL, ZR, MINUS, PLUS, LEFT_STICK, RIGHT_STICK, HOME, SC, UP, RIGHT, DOWN, LEFT}
 	const int NumButtons = 18;
+	// スティック(左XYと右XY)
 	enum SticksNum {LEFT_X, LEFT_Y, RIGHT_X, RIGHT_Y};
 	const int NumSticks = 4;
 	class ProController {

@@ -39,6 +39,7 @@ void ProController::init(const char* fileName, int timeout) {
 				break;
 			}
 		}
+		// コントローラーが接続されたかの確認、されてない場合はループ続行
 		try {
 			JoyStick.open(fileName);
 			if (JoyStick.is_open()) {
@@ -60,6 +61,7 @@ void ProController::init(const char* fileName, int timeout) {
 	}
 }
 
+// 接続状態を返す
 bool ProController::connectedCheck() {
 	return connectedFlag;
 }
