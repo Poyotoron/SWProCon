@@ -12,8 +12,9 @@ int main(void) {
 	UPDATELOOP (Controller, !(Controller.button(UP) && Controller.button(Y))) {
 		for (int j = 0; j < NumButtons; ++j) {
 			if (Controller.button(ButtonsNum(j)))
-				cout << j << endl;
+				cout << j << " ";
 		}
+		cout << "\n";
 		for (int j = 0; j < NumSticks; ++j) {
 			cout << Controller.stick(SticksNum(j)) << " ";
 		}

@@ -4,7 +4,7 @@
 #include <fstream>
 #include <thread>
 
-#define UPDATELOOP(c, x) for((c).update; (x); (c).update()) // コントローラcの状態をupdateしながら条件xでループ
+#define UPDATELOOP(c, x) for((c).update(); (x); (c).update()) // コントローラcの状態をupdateしながら条件xでループ
 
 namespace SWPC{
 	// ボタン(全部で14+4(十字ボタンはスティック扱い))
@@ -18,7 +18,7 @@ namespace SWPC{
 		ProController();
 		ProController(bool, int timeout = 0);
 		ProController(const char*, bool precision = false, int timeout = 0);
-		void init(const char*, int);
+		void init(const char*, bool, int);
 		bool connectedCheck();
 		void precisionMode(bool precision);
 		void read();

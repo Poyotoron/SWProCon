@@ -69,7 +69,7 @@ bool ProController::connectedCheck() {
 	return connectedFlag;
 }
 
-bool ProController::precisionMode(bool precision) {
+void ProController::precisionMode(bool precision) {
 	precisionFlag = precision;
 }
 
@@ -97,22 +97,22 @@ void ProController::read() {
 		c = JoyStick.get();
 		data.push_back(c);
 	}
-	if (data[7] == 0x01) {
-		if (0 <= data[6] && data[6] < NumButtons - 4) {
-			int index = data[6];
-			if (data[5] == 0x00) {
+	if (data[6] == 0x01) {
+		if (0 <= data[7] && data[7] < NumButtons - 4) {
+			int index = data[7];
+			if (data[4] == 0x00) {
 				readButtonData[index] = false;
-			} else if (data[5] == 0x01) {
+			} else if (data[4] == 0x01) {
 				readButtonData[index] = true;
 			}
 		}
-	} else if (data[7] == 0x02) {
-		if (0 <= data[6] && data[6] < NumSticks) {
-			int index = data[6];
-			readStickData[index] = data[4];
+	} else if (data[6] == 0x02) {
+		if (0 <= data[7] && data[7] < NumSticks) {
+			int index = data[7];
+			readStickData[index] = data[5];
 			if (precisionFlag) {
 				readStickData[index] *= 0x100;
-				readStickData[index] += data[5];
+				readStickData[index] += data[4];
 				if (readStickData[index] >= 32768) {
 					readStickData[index] -= -65536;
 				}
@@ -191,7 +191,7 @@ bool ProController::press(ButtonsNum Button) {
 	return !beforeButtonData[Button] && buttonData[Button];
 }
 
-bool ProController::release(ButtonsNum button) {
+bool ProController::release(ButtonsNum Button) {
 	return beforeButtonData[Button] && !buttonData[Button];
 }
 
