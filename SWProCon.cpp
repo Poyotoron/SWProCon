@@ -83,10 +83,8 @@ void ProController::precisionMode(bool precision) {
 	ボタンの場合は0か1
 	アナログスティック、十字ボタンの場合は-32767(0x8001)~32767(0x7FFF)
 ・4つ目の16bitは識別を表している。
-	1つ目の4bitは0
-	2つ目の4bitは操作箇所の識別
-	3つ目の4bitは0
-	4つ目の4bitはボタンかアナログスティックかの識別
+	上8bitは操作箇所の識別
+	下8bitはボタンかアナログスティックかの識別
 */
 void ProController::read() {
 	vector<char> data;
