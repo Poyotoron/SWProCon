@@ -8,7 +8,7 @@
 
 namespace SWPC{
 	// ボタン(全部で14+4(十字ボタンはスティック扱い))
-	enum ButtonsNum {B, A, Y, X, L, R, ZL, ZR, MINUS, PLUS, LEFT_STICK, RIGHT_STICK, HOME, SC, UP, RIGHT, DOWN, LEFT};
+	enum ButtonsNum {B, A, Y, X, L, R, ZL, ZR, MINUS, PLUS, LEFT_STICK, RIGHT_STICK, HOME, SS, UP, RIGHT, DOWN, LEFT};
 	const int NumButtons = 18;
 	// スティック(左XYと右XYと十字ボタン)
 	enum SticksNum {LEFT_X, LEFT_Y, RIGHT_X, RIGHT_Y, CROSS_X, CROSS_Y};
