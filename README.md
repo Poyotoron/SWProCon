@@ -50,7 +50,7 @@ void SWPC::ProController::precisionMode(bool precision = true)
 ```cpp
 bool SWPC::ProController::button(ButtonsNum button, bool onlyFlag = false)
 ```
-* 0~17, または B, A, Y, X, L, R, ZL, ZR, MINUS, PLUS, LEFT_STICK, RIGHT_STICK, HOME, SC, UP, RIGHT, DOWN, LEFT でボタンを指定するとそのボタンが押されてるかどうかを返します(押されてるとtrue)。
+* 0~17, または B, A, Y, X, L, R, ZL, ZR, MINUS, PLUS, LEFT_STICK, RIGHT_STICK, HOME, SS, UP, RIGHT, DOWN, LEFT でボタンを指定するとそのボタンが押されてるかどうかを返します(押されてるとtrue)。
 * 第二引数にtrueを入れると第一引数で指定されたボタンだけが押されている時のみtrueを返します。
 
 ```cpp
